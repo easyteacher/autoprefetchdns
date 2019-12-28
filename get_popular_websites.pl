@@ -5,9 +5,9 @@ use Storable qw(store retrieve);
 use POSIX qw(strftime ceil);
 my %website_hash = ();
 my @prefetch_domain = ();
-my $dnsmasq_log_file = '/mnt/mmcblk0p2/openwrt/var/log/dnsmasq.log';
-my $hash_file = '/mnt/mmcblk0p2/openwrt/var/log/prefetch_domains.hash';
-my $hash_file_2 = '/mnt/mmcblk0p2/openwrt/var/log/domains_popluarity.hash';
+my $dnsmasq_log_file = '/var/log/dnsmasq.log';
+my $hash_file = '/var/log/prefetch_domains.hash';
+my $hash_file_2 = '/var/log/domains_popluarity.hash';
 
 if (-e $hash_file_2) {
 	%website_hash = %{retrieve($hash_file_2)};
